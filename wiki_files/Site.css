@@ -1,0 +1,600 @@
+﻿BODY
+{
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana;
+    font-size: 13px;
+    background-color: #052230;
+    color: #444444;
+    min-width:985px;
+}
+H1
+{
+    color: #2C7898;
+    font-size: 24px;
+    font-weight: normal;
+    border-bottom: solid 1px #D6D6D6;
+    padding-bottom: 10px;
+}
+H2
+{
+    color: #2D7898;
+    font-weight: normal;
+    font-size: 20px;
+}
+H3
+{
+    color: #2D7898;
+    font-weight: normal;
+    margin: 10px 0px 10px 0px;
+    font-size: 15px;
+}
+H4
+{
+    margin: 5px 0px 5px 0px;
+}
+P
+{
+    line-height: 17px;
+}
+A
+{
+    text-decoration: none;
+    color: #CA060A;
+}
+H1 A
+{
+    color: inherit;
+}
+H2 A
+{
+    color: inherit;
+}
+H3 A
+{
+    color: inherit;
+}
+PRE
+{
+    background-color: #F5F5F5;
+}
+CODE
+{
+    color:Maroon;
+    font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
+}
+LI
+{
+    padding:2px;
+    list-style-position:inside;
+}
+.ExceptFooter
+{
+    background-color: White;
+}
+.Header1
+{
+    background-color: #1A5068;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    color: White;
+    font-size: 12px;
+}
+.Header1 .Panel > *
+{
+    margin-left: 20px;
+}
+.Header1 A
+{
+    color: inherit;
+}
+.Header1 A.Selected
+{
+    font-weight: bold;
+}
+.Header2
+{
+    height: 70px;
+    color: #1D5370;
+    font-size: 13px;
+    background: url(/web/20160918045717im_/http://sharpkit.net/res/img/bar_top.jpg);
+    
+}
+.Menu
+{
+    text-align: right;
+}
+.Menu A
+{
+    display: inline-block;
+    line-height: 70px;
+    vertical-align: top;
+    text-decoration: none;
+    color: inherit;
+}
+.Menu A.Selected
+{
+    font-weight: bold;
+}
+.Menu SPAN
+{
+    display: inline-block;
+    background: url(/web/20160918045717im_/http://sharpkit.net/res/img/spacer_bar_top.jpg) no-repeat center center;
+    width: 6px;
+    margin-left: 4px;
+    height: 70px;
+}
+.Main
+{
+    min-height: 650px;
+    padding-bottom: 20px;
+    clear:both;
+}
+.Panel
+{
+    width: 950px;
+    margin: auto;
+}
+.Header3
+{
+    height: 100px;
+    background: #23607D url(/web/20160918045717im_/http://sharpkit.net/res/img/grad_hed.jpg) repeat-x center left;
+}
+.Header3 H1
+{
+    font-size: 40px;
+    color: White;
+    font-weight: normal;
+    border: none;
+    line-height: 100px;
+    margin: 0px;
+}
+.Banner
+{
+    height: 250px;
+    background: url(/web/20160918045717im_/http://sharpkit.net/res/img/grad_hed.jpg) repeat-x;
+    color: #E0E2E1;
+}
+.Banner H1
+{
+    color: #BEE9FB;
+    font-weight: normal;
+    font-size: 26px;
+    border-bottom: none;
+    padding-bottom: 5px;
+    margin-bottom:5px;
+}
+.Banner H2
+{
+    color: #BEE9FB;
+    font-weight: normal;
+    font-size: 20px;
+}
+.Banner H3
+{
+    font-weight: normal;
+    color: White;
+    font-size: 18px;
+    margin: 8px 0px 8px 0px;
+}
+.Banner B
+{
+    color: #4ACAFF;
+    font-weight: normal;
+}
+.Banner P
+{
+    color: #E2E2E2;
+    font-size: 11px;
+}
+.BannerContent
+{
+    height: 250px;
+    background: #3386A5 url(/web/20160918045717im_/http://sharpkit.net/res/img/hed_pic.png) top right;
+}
+.FreeDownloadButton
+{
+    width: 159px;
+    height: 41px;
+    display: inline-block;
+    background-image: url(/web/20160918045717im_/http://sharpkit.net/res/img/but_green.png);
+    position: relative;
+    left: -6px;
+}
+.FreeDownloadButton:hover
+{
+    background-image: url(/web/20160918045717im_/http://sharpkit.net/res/img/but_green_up.png);
+}
+.Button
+{
+    width: 139px;
+    height: 41px;
+    display: inline-block;
+    background: url(/web/20160918045717im_/http://sharpkit.net/res/img/but_green_empty.png) no-repeat;
+    font-size: 16px;
+    color: White;
+    text-align: center;
+    line-height: 40px;
+    padding-right: 20px;
+}
+.Button:hover
+{
+    background: url(/web/20160918045717im_/http://sharpkit.net/res/img/but_green_empty_up.png) no-repeat;
+}
+.Button2
+{
+    width: 159px;
+    height: 41px;
+    display: inline-block;
+    background: url(/web/20160918045717im_/http://sharpkit.net/res/img/but_red_2.png) no-repeat;
+    font-size: 16px;
+    color: White;
+    text-align: center;
+    line-height: 40px;
+}
+.Button2:hover
+{
+    background: url(/web/20160918045717im_/http://sharpkit.net/res/img/but_red_up_2.png) no-repeat;
+}
+
+.BannerLeftText
+{
+    padding: 10px 0px 30px 0px;
+    float: left;
+    width:530px;
+}
+.BannerRightText
+{
+    padding: 30px 0px 30px 0px;
+    float: right;
+    width: 200px;
+}
+.Footer
+{
+    background: url(/web/20160918045717im_/http://sharpkit.net/res/img/footer_grad.jpg);
+    color: #E2E2E2;
+    font-size: 11px;
+}
+.Footer A
+{
+    color: inherit;
+    padding: 0px 10px 0px 10px;
+}
+.Footer A.Selected
+{
+    font-weight: bold;
+}
+.Footer .Panel
+{
+    background: url(/web/20160918045717im_/http://sharpkit.net/res/img/footer.jpg) repeat;
+    height: 40px;
+    text-align: center;
+    color: White;
+    line-height: 30px;
+}
+.Footer2 .Panel
+{
+    color: #E2E2E2;
+    font-size: 11px;
+    text-align: center;
+    padding: 10px 0px 22px 0px;
+}
+.Quote
+{
+    border-bottom: solid 1px #D6D6D6;
+    margin-bottom: 10px;
+    width: 100%;
+    font-family: Verdana;
+    font-size: 11px;
+    font-style: italic;
+}
+.Quote A
+{
+    font-style: normal;
+    color: #CA060A;
+}
+.Login
+{
+    background: url(/web/20160918045717im_/http://sharpkit.net/res/img/login_icon.png) no-repeat;
+    padding-left: 20px;
+    margin-left: 30px;
+}
+.Logout
+{
+    background: url(/web/20160918045717im_/http://sharpkit.net/res/img/logout_icon.png) no-repeat;
+    padding-left: 20px;
+    margin-left: 30px;
+}
+.Search
+{
+    border: solid 1px #9C9C9C;
+    background-color: White;
+    font-size: 13px;
+}
+.Search A
+{
+    display: inline-block;
+    background: url(/web/20160918045717im_/http://sharpkit.net/res/img/magnifying_glass_icon.jpg) no-repeat center right;
+    width: 18px;
+    height: 16px;
+    vertical-align: text-top;
+    font-size: inherit;
+}
+.Search INPUT
+{
+    font-size: inherit;
+    vertical-align: text-top;
+    border: none;
+    width: 80px;
+    margin: 0px;
+    padding: 0px 4px 0px 4px;
+}
+.SearchBig
+{
+    border: solid 1px #9C9C9C;
+    background-color: White;
+    font-size: 16px;
+    display:inline-block;
+    margin:10px 0px 10px 0px;
+}
+.SearchBig A
+{
+    display: inline-block;
+    background: url(/web/20160918045717im_/http://sharpkit.net/res/img/magnifying_glass_icon.jpg) no-repeat center center;
+    width: 30px;
+    height: 27px;
+    vertical-align: text-top;
+    font-size: inherit;
+}
+
+.SearchBig INPUT
+{
+    font-size: inherit;
+    vertical-align: text-top;
+    border: none;
+    width: 180px;
+    margin: 0px;
+    padding: 4px;
+}
+.PricingTable
+{
+    width: 100%;
+    table-layout: fixed;
+    margin-top: 30px;
+}
+.PricingTable P
+{
+    font-size: 11px;
+    line-height: 17px;
+}
+.PricingTable TD
+{
+    vertical-align: top;
+}
+.TableOfContents
+{
+    list-style-type: none;
+    padding-left: 0px;
+    font-size: 11px;
+    margin-right: 20px;
+    font-weight:bold;
+}
+.TableOfContents UL
+{
+    list-style-type: none;
+    padding-left: 15px;
+    font-weight:normal;
+}
+
+.TableOfContents .Selected
+{
+    color: #CA060A;
+}
+.TableOfContents A
+{
+    padding: 4px;
+    display: inline-block;
+    color: #2D7898;
+}
+.TableOfContents A:hover
+{
+    text-decoration: underline;
+}
+.Help PRE
+{
+    padding: 5px;
+    margin: 0px;
+}
+.Pager
+{
+    margin-top: 30px;
+    font-size: 11px;
+    text-align: right;
+}
+.Pager A
+{
+    color: #2D7898;
+    margin-left: 10px;
+}
+.Pager A:hover
+{
+    text-decoration: underline;
+}
+.SearchPager
+{
+    text-align:center;
+}
+.SearchPager A
+{
+    color: #2D7898;
+    margin:0px 5px 0px 5px;
+}
+.SearchPager A.Selected
+{
+    font-weight:bold;
+}
+.TabControl A
+{
+    border-left: solid 1px #BBBBBB;
+    border-right: solid 1px #BBBBBB;
+    border-top: solid 1px #BBBBBB;
+    background-color: #F5F5F5;
+    color: #2D7898;
+    display: inline-block;
+    padding: 5px;
+    margin-right:5px;
+    font-size:11px;
+    vertical-align: bottom;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.TabControl A.Selected
+{
+    background-color: White;
+    color: #CA060A;
+    position: relative;
+    top: 1px;
+    padding-bottom: 6px;
+}
+.TabControl .TabContent
+{
+    border: solid 1px #BBBBBB;
+}
+
+
+.CodeTable
+{
+    width: 100%;
+    table-layout: fixed;
+    border-collapse:collapse;
+}
+.CodeCell
+{
+    padding-bottom:10px;
+    padding-top:3px;
+}
+.CodeCell.Left
+{
+    padding-right:5px;
+}
+.CodeCell.Right
+{
+    padding-left:5px;
+}
+.CodeEditor
+{
+    border:solid 1px #BBBBBB;
+    background-color:White;
+}
+.CodeEditor.Active
+{
+    border:solid 1px #2C7898;
+}
+
+Table.PaddedAndBordered
+{
+border-collapse:collapse;
+}
+
+Table.Padded TD,TH
+{
+    border:none 0px;
+    padding:7px 10px;
+}
+
+.LatestVersion
+{
+    background-color:#55FF55;
+}
+.OldVersion
+{
+    background-color:#FFFF55;
+}
+.VeryOldVersion
+{
+    background-color:#FF5555;
+}
+
+.BuyNow
+{
+    margin-bottom:20px;
+}
+
+.TextEditorHost
+{
+    width:100%;
+}
+
+.Customer
+{
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:80px;
+    height:36px;
+}
+
+.Customers
+{
+    text-align:center;
+}
+.Customers IMG
+{
+    padding:10px;
+    vertical-align:middle;
+}
+
+.Video
+{
+    padding:10px 0px;
+}
+
+
+
+/****************** CSharpFormat Begin ************/
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: Consolas, "Courier New", Courier, Monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #800000; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+/****************** CSharpFormat End ************/
+/*
+     FILE ARCHIVED ON 04:57:17 Sep 18, 2016 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 22:31:37 Jun 15, 2018.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  LoadShardBlock: 158.347 (3)
+  esindex: 0.008
+  captures_list: 175.443
+  CDXLines.iter: 11.631 (3)
+  PetaboxLoader3.datanode: 70.06 (5)
+  exclusion.robots: 0.161
+  exclusion.robots.policy: 0.149
+  RedisCDXSource: 1.717
+  PetaboxLoader3.resolve: 1270.995 (3)
+  load_resource: 1211.719
+*/

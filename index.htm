@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" class="SearchEngineIgnore"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="./wiki_files/analytics.js"></script><script src="./wiki_files/analytics(1).js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="./wiki_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="./wiki_files/iconochive.css">
+
+<!-- End Wayback Rewrite JS Include -->
+        <title>SharpKit - C# to JavaScript Compiler</title>
+        
+        <meta name="description" content="SharpKit is a tool that converts C# to JavaScript during compilation. SharpKit supports all popular web and mobile frameworks and generates pure clean JavaScript.">
+        <meta name="keywords" content="C#,javascript,converter,js,jquery,html5,asp.net,gwt,script#,jsc,visual studio">
+        <link rel="icon" type="image/png" href="https://web.archive.org/web/20160821175134im_/http://sharpkit.net:80/Wiki/res/img/favicon.ico">
+       
+    <script src="./wiki_files/Learn.js" type="text/javascript"></script>
+    <script src="./wiki_files/core.js" type="text/javascript"></script>
+    <script src="./wiki_files/texteditor.js" type="text/javascript"></script>
+    
+    <script>        $(QuickStart_Load);</script>
+      
+        <link href="./wiki_files/Site.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+
+    <div class="ExceptFooter">
+        <div class="Header1">
+            <div class="Panel">
+                <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/About.aspx">About</a>
+                <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/Contact.aspx">Contact us</a>
+                <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/ReleaseNotes.aspx">Release Notes</a>
+                <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/help/">Documentation</a>
+                <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/Support.aspx">Support</a>
+                <a href="https://web.archive.org/web/20160821175134/https://github.com/SharpKit/SharpKit">Source</a>
+            </div>
+        </div>
+        <div class="Header2">
+            <div class="Panel">
+                <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/" style="float: left;">
+                    <img border="0" src="./wiki_files/logo_2.jpg" alt="SharpKit"></a>
+                <div class="Menu">
+                    <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/">Home</a><span></span>
+                    <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/Videos.aspx">Videos</a><span></span>
+                    <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/Live.aspx">Live</a><span></span>
+                    <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/Demos.aspx">Demos</a><span></span>
+                    <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/Faq.aspx">FAQ</a><span></span>
+                    <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/Compare.aspx">Compare</a><span></span>
+                    <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/Licensing.aspx">Licensing</a><span></span>
+                    <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/Wiki/" class="Selected">Wiki</a><span></span>
+                    <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/Download.aspx">Download</a>
+                </div>
+            </div>
+        </div>
+        <div class="Main SearchEngineInclude">
+            
+    <div class="Header3">
+        <div class="Panel">
+            <h1>Wiki</h1>
+        </div>
+    </div>
+    <div class="Panel Help">
+    <h1> SharpKit 5 </h1><h2> What's New </h2><li>C# debugging support in Google Chrome! (See instructions below)</li><li>Brand new mono-based C# code and assembly parser (<a href="https://web.archive.org/web/20160821175134/http://wiki.sharpdevelop.net/NRefactory.ashx">NRefactory</a> and <a href="https://web.archive.org/web/20160821175134/http://www.mono-project.com/Cecil">Cecil</a>)</li><li>Basic yield support - using eager list addition (not using state machine yet)</li><li>Automatic inlining of compile-time values - consts, string concatenations, etc...</li><li>C# style params array support</li><li>Parallel execution</li><p></p><h2> Getting Started </h2><p>Create a new project by opening Visual Studio and create a new "SharpKit 5 Web Application" project.</p><p></p><h2> Service Mode </h2><p>SharpKit can now run as a local HTTP service, inside a windows service container, or in console mode. You can find the windows service by running "services.msc" and finding a service named SharpKit. If this service is stopped, SharpKit will revert to command line execution mode.</p><p>To start and stop the SharpKit Windows Service:</p><p>Run: services.msc</p><p>Find the service, click start / stop.</p><p>It is also possible to run the service manually in console mode using the following command:</p><pre>skc5.exe /service:console
+</pre><p>SharpKit is hosted on port 7667 by default, it is possible to execute GET command on it, with the same command line arguments format:</p><p><a href="https://web.archive.org/web/20160821175134/http://localhost:7667/Compile?CommandLineArgs=/why">http://localhost:7667/Compile?CommandLineArgs=/why</a></p><p>Any command line argument can be set in the CommandLineArgs query string parameter, this specific command may help you debug license validation issues.</p><p></p><p></p><h2> Debugging </h2><p>Debugging of C# code from within the browser is currently supported in Google Chrome only.</p><p>A demo of debugging is available in our open-source SVN repository, named: SharpKitSourceMappingSample</p><p><a href="https://web.archive.org/web/20160821175134/http://code.google.com/p/sharpkit/source/checkout">http://code.google.com/p/sharpkit/source/checkout</a></p><p></p><p>To enable debugging of C# code, please follow these steps:</p><li>In your AssemblyInfo.cs file, add the following code:</li><pre>[JsExport(GenerateSourceMaps = true)]
+</pre><li>Add a reference to SharpKit.Web assembly (found in .NET references dialog, or in the SharpKit program files folder)</li><li>Add the SourceMaps handler in your web.config file:</li><pre>&lt;add name="SourceMapsHandler" type="SharpKit.Web.Server.Handlers.SourceMapsHandler, SharpKit.Web" verb="*" path="SourceMaps.ashx" /&gt;
+</pre><li>Enable source maps in chrome: show development bar, click options wheel, check enable source maps.</li><li>Build your project</li><li>View in Google Chrome browser</li><li>Debug!</li><p></p><h2> Upgrading from SharpKit v4 to SharpKit v5 </h2><p>Upgrading from SharpKit v4 to v5 is very simple, and can be easily reverted back. </p><p>Before upgrading, check-in / commit your code, after upgrade, build your project and compare your newly generated js files with your previous ones.</p><p></p><p>Edit your .csproj file, replace the SharpKit v4 import line, with the SharpKit v5 import line:</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">WebApp.csproj </a><div class="TabContent"><pre><pre class="csharpcode"><span class="rem">&lt;!--Replace this line:--&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">Import</span> <span class="attr">Project</span><span class="kwrd">="$(MSBuildBinPath)\SharpKit\4\SharpKit.Build.targets"</span> <span class="kwrd">/&gt;</span>
+<span class="rem">&lt;!--With this line:--&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">Import</span> <span class="attr">Project</span><span class="kwrd">="$(MSBuildBinPath)\SharpKit\5\SharpKit.Build.targets"</span> <span class="kwrd">/&gt;</span>
+</pre></pre></div></div><p></p><h2> Troubleshooting </h2><p></p><h3> Parallel Execution </h3><p>Parallel execution can be disabled in skc5.exe.config file, set appSettings "Parallel" to "false".</p><p></p><h3> License Validation Issues </h3><p>If you're running an activated version of SharpKit, but still getting license errors, run the following:</p><pre>skc5.exe /why
+</pre><p>Since SharpKit runs as a different user when in windows service, it's best to run it as an HTTP request while the service is running:</p><p><a href="https://web.archive.org/web/20160821175134/http://localhost:7667/Compile?CommandLineArgs=/why">http://localhost:7667/Compile?CommandLineArgs=/why</a></p><p>Check the filename of the license, if it doesn't exist, run the /why in command line, and copy the file there.</p><p></p><p></p><h2> Support </h2><p>If you run into any issues using SharpKit 5, please <a href="https://web.archive.org/web/20160821175134/mailto:support@sharpkit.net">email us</a> or post in our <a href="https://web.archive.org/web/20160821175134/https://groups.google.com/forum/?fromgroups#!forum/sharpkit">forum</a>.</p><h1> Integrating SharpKit </h1><p>This chapter will explain how to start using SharpKit in new or existing projects, SharpKit easily integrates into any project type, whether it's a web application, class library or even console application.</p><p></p><h2> Creating a new project with SharpKit </h2><li>Open Visual Studio</li><li>Click File -&gt; New Project</li><li>Select Visual C# -&gt; SharpKit -&gt; SharpKit Web Application and click Ok.</li><p>SharpKit enabled ASP.NET web application will be created with an aspx page, and a C# code-behind with a class that is converted to JavaScript during compilation. </p><p></p><h2> Integrating SharpKit into an existing project </h2><p>Add the following line on your .csproj file: (add it right after all 'Import' sections in your project file)</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">WebApp.csproj</a><div class="TabContent"><pre><pre class="csharpcode"><span class="rem">&lt;!--This line is in any .csproj file: --&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">Import</span> <span class="attr">Project</span><span class="kwrd">="$(MSBuildBinPath)\Microsoft.CSharp.targets"</span> <span class="kwrd">/&gt;</span>
+<span class="rem">&lt;!--Add this line after all Import sections: --&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">Import</span> <span class="attr">Project</span><span class="kwrd">="$(MSBuildBinPath)\SharpKit\5\SharpKit.Build.targets"</span> <span class="kwrd">/&gt;</span>
+</pre></pre></div></div><p>Add the following references into your project:</p><li>SharpKit.JavaScript.dll (you must add this reference)</li><li>SharpKit.Html.dll</li><p>SharpKit supports any C# type project, including web, console (.exe) and class library (.dll) project types.</p><p></p><h2> Upgrading from SharpKit v2 to SharpKit v5 </h2><p>Edit your .csproj file, replace the SharpKit v2 import line, with the SharpKit v4 import line:</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">WebApp.csproj</a><div class="TabContent"><pre><pre class="csharpcode"><span class="rem">&lt;!--Replace this line:--&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">Import</span> <span class="attr">Project</span><span class="kwrd">="$(MSBuildBinPath)\SharpKit\SharpKit.Build.targets"</span> <span class="kwrd">/&gt;</span>
+<span class="rem">&lt;!--With this line:--&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">Import</span> <span class="attr">Project</span><span class="kwrd">="$(MSBuildBinPath)\SharpKit\5\SharpKit.Build.targets"</span> <span class="kwrd">/&gt;</span>
+</pre></pre></div></div><p>Update assembly references, make sure to update SharpKit.JavaScript.dll, never reference both assemblies. SharpKit v4 assemblies are located in your Program Files\SharpKit\4\ folder.</p><p></p><h2> Upgrading from SharpKit v4 to SharpKit v5 </h2><p>Edit your .csproj file, replace the SharpKit v4 import line, with the SharpKit v5 import line:</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">WebApp.csproj</a><div class="TabContent"><pre><pre class="csharpcode"><span class="rem">&lt;!--Replace this line:--&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">Import</span> <span class="attr">Project</span><span class="kwrd">="$(MSBuildBinPath)\SharpKit\4\SharpKit.Build.targets"</span> <span class="kwrd">/&gt;</span>
+<span class="rem">&lt;!--With this line:--&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">Import</span> <span class="attr">Project</span><span class="kwrd">="$(MSBuildBinPath)\SharpKit\5\SharpKit.Build.targets"</span> <span class="kwrd">/&gt;</span>
+</pre></pre></div></div><h1> Using SharpKit </h1><p>In this chapter you will learn about the different SharpKit C# to JavaScript conversion modes. Each mode has a unique set of rules designed to help you achieve any type of JavaScript code, while remaining in a fully typed, valid C#.</p><h2> Writing your first class </h2><p>To convert a class into JavaScript, all you have to do is to decorate your class with a JsType attribute. There are several modes in which SharpKit can convert C# to JavaScript, by setting the JsMode parameter on the JsType attribute. </p><p>Create a new class and add the following code:</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">Site.cs</a><a href="javascript:void(0)">Site.js</a><a href="javascript:void(0)">Site.htm</a><div class="TabContent"><pre><pre class="csharpcode">[JsType(JsMode.Global, Filename=<span class="str">"Site.js"</span>)]
+<span class="kwrd">class</span> Site : HtmlContext
+{
+    <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">void</span> btnHello_click(HtmlDomEventArgs e)
+    {
+           document.body.appendChild(document.createTextNode(<span class="str">"Hello SharpKit!"</span>));
+    }
+}
+</pre></pre></div><div class="TabContent" style="display: none;"><pre><pre class="csharpcode"><span class="kwrd">function</span> btnHello_click(e)
+{
+    document.body.appendChild(document.createTextNode(<span class="str">"Hello SharpKit!"</span>));
+}
+</pre></pre></div><div class="TabContent" style="display: none;"><pre><pre class="csharpcode"><span class="kwrd">&lt;</span><span class="html">html</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">head</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">script</span> <span class="attr">src</span><span class="kwrd">="Site.js"</span><span class="kwrd">&gt;&lt;/</span><span class="html">script</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">head</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">body</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">button</span> <span class="attr">onclick</span><span class="kwrd">="btnHello_click(event);"</span><span class="kwrd">&gt;</span>Click me<span class="kwrd">&lt;/</span><span class="html">button</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">body</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">html</span><span class="kwrd">&gt;</span>
+</pre></pre></div></div><p>The JsType attribute will cause SharpKit to convert the class Site into the file Site.js, you can see the js file included in the htm file.</p><p></p><h2> Global Mode </h2><p>A class decorated with a JsType(JsMode.Global) attribute will be converted in the following rules:</p><p>Static methods are converted to global functions (named functions)Static fields are converted to global variablesStatic constructor is converted to global code</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">Global.cs </a><a href="javascript:void(0)">Global.js </a><div class="TabContent"><pre><pre class="csharpcode">[JsType(JsMode.Global, Filename=<span class="str">"Global.js"</span>)]
+<span class="kwrd">class</span> Global
+{
+    <span class="kwrd">static</span> JsNumber MyNumber = 0;
+    <span class="kwrd">static</span> Global()
+    {
+        HelloWorld();
+    }
+    <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">void</span> HelloWorld()
+    {
+        document.body.appendChild(document.createTextNode(<span class="str">"Hello SharpKit!"</span>));
+    }
+}
+</pre></pre></div><div class="TabContent" style="display: none;"><pre><pre class="csharpcode"><span class="kwrd">var</span> MyNumber = 0;
+HelloWorld();
+<span class="kwrd">function</span> HelloWorld()
+{
+    document.body.appendChild(document.createTextNode(<span class="str">"Hello SharpKit!"</span>));
+}
+</pre></pre></div></div><p>Although it seems that the C# and JavaScript code is similiar, notice that it's fully typed. Write this code in a visual studio project, and hover with your mouse over the token 'document' or 'createTextNode' and see the documentation. Any attempt to modify the code to an unexisting method will result in compilation error.</p><p></p><h2> Prototype Mode </h2><p>A class decorated with a JsType(JsMode.Prototype) attribute will be converted in the following rules:</p><p>Constructor is converted into a JavaScript constructor functionInstance methods are converted into prototype functionsStatic methods are converted into functions on the constructor function</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">Contact.cs </a><a href="javascript:void(0)">Contact.js</a><div class="TabContent"><pre><pre class="csharpcode">[JsType(JsMode.Prototype, Filename=<span class="str">"Contact.js"</span>)]
+<span class="kwrd">class</span> Contact
+{
+    <span class="kwrd">public</span> <span class="kwrd">void</span> Call()
+    {
+    }
+    <span class="kwrd">public</span> <span class="kwrd">static</span> Contact Load()
+    {
+         <span class="kwrd">return</span> <span class="kwrd">null</span>;
+    }
+}
+</pre></pre></div><div class="TabContent" style="display: none;"><pre><pre class="csharpcode">Contact = <span class="kwrd">function</span>()
+{
+}
+Contact.prototype.Call = <span class="kwrd">function</span>()
+{
+}
+Contact.Load = <span class="kwrd">function</span>()
+{
+    <span class="kwrd">return</span> <span class="kwrd">null</span>;
+}
+</pre></pre></div></div><p></p><h2> Json Mode </h2><p>A class decorated with a JsType(JsMode.Json) attribute will not be exported at all, it will give you the ability to use JSON notation on typed classes.</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">MyOptions.cs </a><a href="javascript:void(0)">MyPage.cs</a><a href="javascript:void(0)">MyPage.js </a><div class="TabContent"><pre><pre class="csharpcode">[JsType(JsMode.Json)]
+<span class="kwrd">class</span> MyOptions
+{
+    <span class="kwrd">public</span> JsString Name { get; set; }
+    <span class="kwrd">public</span> <span class="kwrd">bool</span> IsCool { get; set; }
+}
+</pre></pre></div><div class="TabContent" style="display: none;"><pre><pre class="csharpcode">[JsType(JsMode.Global, Filename=<span class="str">"MyPage.js"</span>)]
+<span class="kwrd">class</span> MyPage
+{
+    <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">void</span> Main()
+    {
+        var options = <span class="kwrd">new</span> MyOptions { Name=<span class="str">"MyName"</span>, IsCool=<span class="kwrd">true</span> };
+    }
+}
+</pre></pre></div><div class="TabContent" style="display: none;"><pre><pre class="csharpcode"><span class="kwrd">function</span> Main()
+{
+    <span class="kwrd">var</span> options = {Name:<span class="str">"MyName"</span>, IsCool:<span class="kwrd">true</span>};
+}
+</pre></pre></div></div><p>This technique is very useful on constructor Options class, for example, jQuery.ajax(options) function. It also gives you the ability to share web service data contracts between client and server. Simply mark your data contract classes with the JsType(JsMode.Json) and you'll be able to use them in a C# to JavaScript context.</p><h1> Using Web Libraries with SharpKit </h1><p>SharpKit supports any JavaScript based library, in order to use a library with SharpKit, you must obtain a C# 'header' file of the library. A C# header file contains all the classes and methods that a certain library offers. The methods in this file have no implementation, and are not converted into JavaScript, they simply give you the ability use them from C#. You can use these files by adding them to your project, or by referencing compiled assembly version of them.</p><p>To make things easy, we have created a googlecode project called SharpKit SDK, which contains open-source C# header files for all popular web libraries such as: jQuery, ASP.NET Ajax, ExtJS, jQTouch and more... These libraries are maintained by us and by members of the SharpKit community, if you'd like to contribute, let us know. You should know that all of these libraries are also included in the SharpKit installer, and are available on your SharpKit Program Files folder. </p><p></p><h2> Using jQuery </h2><p>In order to use jQuery, you'll need to add a reference to SharpKit.jQuery assembly, or include the SharpKit.jQuery cs file in your project. There's a header file and an assembly for each version of jQuery. You'll also have to add jQuery js file to pages that use it.</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">HelloWorld.htm </a><a href="javascript:void(0)">HelloWorld.cs </a><a href="javascript:void(0)">HelloWorld.js </a><div class="TabContent"><pre><pre class="csharpcode"><span class="kwrd">&lt;</span><span class="html">html</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">head</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">title</span><span class="kwrd">&gt;</span>Hello World<span class="kwrd">&lt;/</span><span class="html">title</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">script</span> <span class="attr">src</span><span class="kwrd">="res/jquery-1.4.4.min.js"</span> <span class="attr">type</span><span class="kwrd">="text/javascript"</span><span class="kwrd">&gt;&lt;/</span><span class="html">script</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">script</span> <span class="attr">src</span><span class="kwrd">="res/HelloWorld.js"</span> <span class="attr">type</span><span class="kwrd">="text/javascript"</span><span class="kwrd">&gt;&lt;/</span><span class="html">script</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">script</span><span class="kwrd">&gt;</span>            $(HelloWorldClient_Load);<span class="kwrd">&lt;/</span><span class="html">script</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">head</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">body</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">button</span><span class="kwrd">&gt;</span>Click me<span class="kwrd">&lt;/</span><span class="html">button</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">body</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">html</span><span class="kwrd">&gt;</span>
+</pre></pre></div><div class="TabContent" style="display: none;"><pre><pre class="csharpcode"><span class="kwrd">using</span> SharpKit.JavaScript;
+<span class="kwrd">using</span> SharpKit.Html;
+<span class="kwrd">using</span> SharpKit.jQuery;
+
+<span class="kwrd">namespace</span> SharpKitWebApp
+{
+    [JsType(JsMode.Global, Filename = <span class="str">"~/res/HelloWorld.js"</span>)]
+    <span class="kwrd">public</span> <span class="kwrd">class</span> HelloWorldClient : jQueryContext
+    {
+        <span class="kwrd">static</span> <span class="kwrd">void</span> HelloWorldClient_Load()
+        {
+            <span class="rem">//J() is instead of $() which is not allowed in C#</span>
+            J(<span class="str">"button"</span>).click(e =&gt; alert(<span class="str">"Hello world"</span>));
+        }
+    }
+}
+</pre></pre></div><div class="TabContent" style="display: none;"><pre><pre class="csharpcode"><span class="kwrd">function</span> HelloWorld_Load()
+{
+    $(<span class="str">"button"</span>).click(<span class="kwrd">function</span>(e){ <span class="kwrd">return</span> alert(<span class="str">"Hello world"</span>)});
+}
+</pre></pre></div></div><p></p><h2> Writing your own Header Files </h2><p>There are situations in which you will have to write your own header files, this happens in two common scenarios:</p><li>You use a custom library that is not available in SharpKit SDK</li><li>You haven't converted all of your current JavaScript code into C#, but you still need to use this code from C#.</li><p>In order to create a header file, all you have to do is to create empty implementation of the needed classes and members, decorate them with a JsTypeAttribute in the proper mode, and prevent these classes of being exported.</p><p>To prevent C# class with JsTypeAttribute from being exported into JavaScript, use the JsTypeAttribute.Export property. </p><div class="TabControl"><a href="javascript:void(0)" class="Selected">MyExternalLib.cs </a><a href="javascript:void(0)">MyPage.cs</a><a href="javascript:void(0)">MyPage.js</a><div class="TabContent"><pre><pre class="csharpcode">[JsType(JsMode.Prototype, Name=<span class="str">"MyExternalLibrary"</span>, Export=<span class="kwrd">false</span>)]
+<span class="kwrd">class</span> MyExternalLibrary
+{
+    <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">void</span> DoSomething(){}
+}
+[JsType(JsMode.Global, Export=<span class="kwrd">false</span>)]
+<span class="kwrd">class</span> MyExternalFunctions
+{
+    <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">void</span> DoSomethingElse(){}
+}
+</pre></pre></div><div class="TabContent" style="display: none;"><pre><pre class="csharpcode">[JsType(JsMode.Global, Filename=<span class="str">"MyPage.js"</span>)]
+<span class="kwrd">class</span> MyPage
+{
+    <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">void</span> Main()
+    {
+        MyExternalLibrary.DoSomething();
+        MyExternalFunctions.DoSomethingElse();
+    }
+}
+</pre></pre></div><div class="TabContent" style="display: none;"><pre><pre class="csharpcode"><span class="kwrd">function</span> Main()
+{
+    MyExternalLibrary.DoSomething();
+    DoSomethingElse();
+}
+</pre></pre></div></div><p>Please note that the JsTypeAttribute.Mode and Name properties are very important, even if you're not exporting this code. These attributes are used by SharpKit compiler to generate the proper code when you refer to these classes. The JsType(Name="MyExternalLibrary") is very important, since it tells SharpKit to ignore this type's namespace and name, and use the specified name instead.</p><h1> Applying Metadata </h1><p>SharpKit uses Custom Attributes to control and customize JavaScript code generation behavior. These attributes are located in the SharpKit.JavaScript namespace, every type and member in C# has its own attribute, like: JsTypeAttribute, JsMethodAttribute, JsPropertyAttribute and JsFieldAttribute. Attributes can be applied directly on a type / member like this:</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">Grid.cs</a><a href="javascript:void(0)">Grid.js</a><div class="TabContent"><pre><pre class="csharpcode">[JsType(JsMode.Prototype)]
+<span class="kwrd">public</span> <span class="kwrd">class</span> Grid
+{
+    [JsMethod(Name=<span class="str">"render"</span>)]
+    <span class="kwrd">public</span> <span class="kwrd">void</span> Render()
+    {
+    }
+    [JsProperty(Name=<span class="str">"element"</span>)]
+    <span class="kwrd">public</span> HtmlElement Element { get;set; }
+}
+</pre></pre></div><div class="TabContent" style="display: none;"><pre><pre class="csharpcode">Grid = <span class="kwrd">function</span>()
+{
+}
+Grid.prototype.render = <span class="kwrd">function</span>()
+{
+}
+</pre></pre></div></div><p></p><p>Attributes can also be applied externally, on types / members within a project, or even on external referenced types:</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">AssemblyInfo.cs</a><div class="TabContent"><pre><pre class="csharpcode">[assembly: JsType  (TargetType = <span class="kwrd">typeof</span>(Grid),   Mode=JsMode.Prototype)]
+[assembly: JsMethod(TargetType = <span class="kwrd">typeof</span>(Grid),   TargetMethod=<span class="str">"Render"</span>,      Name = <span class="str">"render"</span>)]
+[assembly: JsMethod(TargetType = <span class="kwrd">typeof</span>(<span class="kwrd">string</span>), TargetMethod = <span class="str">"Substring"</span>, Name = <span class="str">"substr"</span>, NativeOverloads = <span class="kwrd">true</span>)]
+</pre></pre></div></div><p>In the example above we can see that it is possible to mark external types such as System.String, and allow SharpKit to generate proper code when it is used. In this case, if anyone uses the Substring() method, it will be generated as substr() in JavaScript.</p><h2> JsTypeAttribute </h2><p>JsTypeAttribute is the most basic and important attribute in SharpKit, it marks any type that should be exported to JavaScript in an "opt-in" style, just like DataMemberAttribute in WCF. JsTypeAttribute has many options that control code generation behavior, but in order to make things more simple, we have created 4 templates, or, modes, in which all options are set to a default value according to popular usage types. So, setting a JsType to Prototype mode:</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">Tree.cs</a><div class="TabContent"><pre><pre class="csharpcode">[JsType(JsMode.Prototype)]
+<span class="kwrd">public</span> <span class="kwrd">class</span> Tree
+{
+}
+</pre></pre></div></div><p>Is the equivalent of setting all of these flags: </p><div class="TabControl"><a href="javascript:void(0)" class="Selected">Tree.cs</a><div class="TabContent"><pre><pre class="csharpcode">[JsType(Native                        = <span class="kwrd">true</span>,
+        NativeOverloads               = <span class="kwrd">true</span>,
+        NativeDelegates               = <span class="kwrd">true</span>,
+        AutomaticPropertiesAsFields   = <span class="kwrd">true</span>,
+        NativeConstructors            = <span class="kwrd">true</span>,
+        NativeEnumerator              = <span class="kwrd">true</span>,
+        NativeFunctions               = <span class="kwrd">true</span>,
+        NativeJsons                   = <span class="kwrd">true</span>,
+        IgnoreGenericTypeArguments    = <span class="kwrd">true</span>,
+        IgnoreGenericMethodArguments  = <span class="kwrd">true</span>,
+        InlineFields                  = <span class="kwrd">true</span>)]
+<span class="kwrd">public</span> <span class="kwrd">class</span> Tree
+{
+}
+</pre></pre></div></div><p>Available modes are: Global, Prototype, Json and Clr. You can read more about these modes <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/Wiki/Using_SharpKit.wiki">here</a>.</p><h2> Performing Optimizations </h2><p>There are two very popular techniques for optimizing JavaScript and CSS files - consolidation and minification. The JsMergedFileAttribute allows you to do both:</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">AssemblyInfo.cs</a><div class="TabContent"><pre><pre class="csharpcode">[assembly: JsMergedFile(Filename=<span class="str">"MySite.js"</span>,     Sources = <span class="kwrd">new</span> <span class="kwrd">string</span>[] { <span class="str">"jQuery.js"</span>, <span class="str">"MyPage1.js"</span>, <span class="str">"MyPage2.js"</span> })]
+[assembly: JsMergedFile(Filename=<span class="str">"MySite.min.js"</span>, Sources = <span class="kwrd">new</span> <span class="kwrd">string</span>[] { <span class="str">"MySite.js"</span> }, Minify = <span class="kwrd">true</span>)]
+</pre></pre></div></div><p>In this code example, a consolidated file named MySite.js will be created, containing all code from jQuery.js, MyPage1.js and MyPage2.js files. The second attribute, takes the previously consolidated file MySite.js, and generates a minified version of it in MySite.min.js. The same rules apply to css files, if the file extension is '.css' the file will be minified in CSS rules minification algorithm.</p><h1> Writing Native JavaScript </h1><p>SharpKit allows you to write native JavaScript code, just as if you've written it yourself. Although C# and JavaScript share many similarities, there are differences as well. This section will explain you how to bridge the gap between the two worlds, and allow you to enjoy the freedom of JavaScript, while retaining the type-checking and validity of C#.</p><h2> Primitive types </h2><p>Every JavaScript primitive type has an equivalent C# type. In order to avoid ambiguity with native C# types, a "Js" prefix is added to each JavaScript primitive type. For example the String object is named JsString in C#, Number is named JsNumber and so on...</p><p>Although a class is named JsString in C#, when it is converted to JavaScript, it will be written as String. This is achieved by using the JsTypeAttribute.Name property: </p><div class="TabControl"><a href="javascript:void(0)" class="Selected">JsString.cs </a><div class="TabContent"><pre><pre class="csharpcode">[JsType(JsMode.Prototype, Name=<span class="str">"String"</span>, Export=<span class="kwrd">false</span>)]
+<span class="kwrd">public</span> <span class="kwrd">class</span> JsString
+{
+}
+</pre></pre></div></div><li>JsObject</li><li>JsArray</li><li>JsString</li><li>JsNumber</li><li>JsDate</li><p></p><h2> Keywords </h2><p>All of JavaScript keywords are located in a single class called JsContext, you can either call the methods on it by qualifying them with the class name, e.g.: JsContext.@typeof(obj); Or, you can simply inherit from the JsContext class and use the methods directly without any prefix.</p><p>The verbatim (@) literal is used in C# to disambiguate between reserved C# keywords and other member / variable names. The 'typeof' method for example is a keyword in C#, so in order to disamibuate it with the JavaScript 'typeof' function, the verbatim (@) literal is needed.</p><li>@this</li><li>@typeof</li><li>@return</li><li>arguments</li><li>eval</li><li>delete</li><li>instanceof</li><p></p><h2> Casting between Types </h2><p>The As&lt;T&gt;() extension method, located in the SharpKit.JavaScript namespace, helps you to cast from one type to another without affecting the generated JavaScript code. for example:</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">MyPage.cs </a><a href="javascript:void(0)">MyPage.js </a><div class="TabContent"><pre><pre class="csharpcode"><span class="kwrd">using</span> SharpKit.JavaScript;
+<span class="kwrd">using</span> SharpKit.Html;
+
+[JsType(JsMode.Global, Filename=<span class="str">"MyPage.js"</span>)]
+<span class="kwrd">class</span> MyPage : HtmlContext
+{
+    <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">void</span> Main()
+    {
+        var input = document.getElementById(<span class="str">"input1"</span>).As&lt;HtmlInputElement&gt;();
+        input.<span class="kwrd">value</span> = <span class="str">"MyValue"</span>;
+    }
+}
+</pre></pre></div><div class="TabContent" style="display: none;"><pre><pre class="csharpcode"><span class="kwrd">function</span> Main()
+{
+    <span class="kwrd">var</span> input = document.getElementById(<span class="str">"input1"</span>);
+    input.value = <span class="str">"MyValue"</span>;
+}
+</pre></pre></div></div><h1> Building a Client-Side Grid Control using SharpKit </h1><h2> Introduction </h2><p>This sample code will show you how to write a client-side grid control using SharpKit. SharpKit is a tool that allows you to write C# code and convert it JavaScript during compilation. This process helps you write code much faster, and with less errors, it also helps you to document your code so other developers can use it more easily. So, to avoid confusion, all the code here will be shown in C#, but in fact, it is standard JavaScript code, and can be used with / without SharpKit afterwards.</p><p>We'll start by learning how to implement the Grid, then move on to using the Grid, and finally, learn how to optimize DOM manipulation to support legacy browsers.</p><p></p><h2> Implementing the Grid </h2><h3> Grid Class </h3><div class="TabControl"><a href="javascript:void(0)" class="Selected">Grid.cs</a><div class="TabContent"><pre><pre class="csharpcode">[JsType(JsMode.Prototype, Filename = <span class="str">"Grid.js"</span>)]
+<span class="kwrd">public</span> <span class="kwrd">class</span> Grid : HtmlContext
+{
+    <span class="kwrd">public</span> Grid()
+    {
+            Rows = <span class="kwrd">new</span> JsArray&lt;GridRow&gt;();
+    }
+    <span class="kwrd">public</span> HtmlElement Element { get; set; }
+    <span class="kwrd">public</span> HtmlElement GridBody { get; set; }
+    <span class="kwrd">public</span> JsArray&lt;GridRow&gt; Rows { get; set; }
+    <span class="kwrd">public</span> <span class="kwrd">void</span> Render()
+    {
+        <span class="kwrd">if</span> (Element == <span class="kwrd">null</span>)
+            <span class="kwrd">return</span>;
+        Element[<span class="str">"_Grid"</span>] = <span class="kwrd">this</span>;
+        <span class="kwrd">if</span> (GridBody == <span class="kwrd">null</span> || GridBody.nodeName != <span class="str">"TBODY"</span>)
+        {
+            GridBody = document.createElement(<span class="str">"TBODY"</span>);
+            Element.appendChild(GridBody);
+        }
+    }
+}
+</pre></pre></div></div><p>This Grid class is designed to be used in the following pattern:</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">GridDemo.cs</a><div class="TabContent"><pre><pre class="csharpcode">var grid = <span class="kwrd">new</span> Grid { Element = document.getElementById(<span class="str">"MyGrid"</span>) };
+grid.Render();
+</pre></pre></div></div><h3> GridRow Class </h3><p>The grid class has a collection of Rows where each row is of type GridRow. GridRow is a json class, which means that it's used only to contain data about the row, in our case we will contain a reference to the table row element (a TR element), and a Data property that associates the row with some data object.</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">GridRow.cs</a><div class="TabContent"><pre><pre class="csharpcode">[JsType(JsMode.Json)]
+<span class="kwrd">public</span> <span class="kwrd">class</span> GridRow
+{
+    <span class="kwrd">public</span> HtmlElement Element { get; set; }
+    <span class="kwrd">public</span> <span class="kwrd">object</span> Data { get; set; }
+}
+</pre></pre></div></div><p>The GridRow class is designed to be used in the following pattern:</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">GridDemo.cs</a><div class="TabContent"><pre><pre class="csharpcode">var row = <span class="kwrd">new</span> GridRow { Element = grid.CreateRow(document.getElementById(<span class="str">"MyGridRowTemplate"</span>)) };
+grid.AddRow(row);
+</pre></pre></div></div><p></p><h3> Adding a Row </h3><p>Now it's time to implement an AddRow method, that will add a GridRow to our Rows collection, and append it to the DOM.</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">Grid.cs</a><div class="TabContent"><pre><pre class="csharpcode"><span class="kwrd">public</span> <span class="kwrd">void</span> AddRow(GridRow gr)
+{
+    var body = GridBody;
+    body.appendChild(gr.Element);
+    gr.Element[<span class="str">"_GridRow"</span>] = gr;
+    Rows.push(gr);
+}
+</pre></pre></div></div><h3> Creating a Row element from template </h3><div class="TabControl"><a href="javascript:void(0)" class="Selected">Grid.cs</a><div class="TabContent"><pre><pre class="csharpcode"><span class="kwrd">public</span> HtmlElement CreateRowElement(HtmlElement template)
+{
+    <span class="kwrd">return</span> template.cloneNode(<span class="kwrd">true</span>);
+}
+</pre></pre></div></div><p>This method simply clones an element, in our case this will be TR element to be cloned for each row in the grid.</p><h2> Using the Grid </h2><p>Now, we're ready to use the grid:</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">GridDemo.htm</a><div class="TabContent"><pre><pre class="csharpcode"><span class="kwrd">&lt;!</span><span class="html">DOCTYPE</span> <span class="attr">html</span> <span class="attr">PUBLIC</span> <span class="kwrd">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span> <span class="kwrd">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">html</span> <span class="attr">xmlns</span><span class="kwrd">="http://www.w3.org/1999/xhtml"</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">head</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">title</span><span class="kwrd">&gt;</span>Grid Demo - SharpKitSamples<span class="kwrd">&lt;/</span><span class="html">title</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">link</span> <span class="attr">href</span><span class="kwrd">="Grid.css"</span> <span class="attr">rel</span><span class="kwrd">="stylesheet"</span> <span class="attr">type</span><span class="kwrd">="text/css"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">script</span> <span class="attr">src</span><span class="kwrd">="res/jquery-1.6.4.min.js"</span> <span class="attr">type</span><span class="kwrd">="text/javascript"</span><span class="kwrd">&gt;&lt;/</span><span class="html">script</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">script</span> <span class="attr">src</span><span class="kwrd">="Grid.js"</span> <span class="attr">type</span><span class="kwrd">="text/javascript"</span><span class="kwrd">&gt;&lt;/</span><span class="html">script</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">script</span> <span class="attr">src</span><span class="kwrd">="GridDemo.js"</span><span class="kwrd">&gt;&lt;/</span><span class="html">script</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">script</span><span class="kwrd">&gt;</span>$(Load);<span class="kwrd">&lt;/</span><span class="html">script</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">head</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">body</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">h1</span><span class="kwrd">&gt;</span>Grid Demo<span class="kwrd">&lt;/</span><span class="html">h1</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">table</span> <span class="attr">id</span><span class="kwrd">="MyGrid"</span> <span class="attr">class</span><span class="kwrd">="Grid"</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">thead</span><span class="kwrd">&gt;</span>
+            <span class="kwrd">&lt;</span><span class="html">tr</span><span class="kwrd">&gt;</span>
+                <span class="kwrd">&lt;</span><span class="html">th</span><span class="kwrd">&gt;</span>Name<span class="kwrd">&lt;/</span><span class="html">th</span><span class="kwrd">&gt;</span>
+                <span class="kwrd">&lt;</span><span class="html">th</span><span class="kwrd">&gt;</span>Age<span class="kwrd">&lt;/</span><span class="html">th</span><span class="kwrd">&gt;</span>
+                <span class="kwrd">&lt;</span><span class="html">th</span><span class="kwrd">&gt;</span>Phone Number<span class="kwrd">&lt;/</span><span class="html">th</span><span class="kwrd">&gt;</span>
+                <span class="kwrd">&lt;</span><span class="html">th</span><span class="kwrd">&gt;</span>Description<span class="kwrd">&lt;/</span><span class="html">th</span><span class="kwrd">&gt;</span>
+            <span class="kwrd">&lt;/</span><span class="html">tr</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;/</span><span class="html">thead</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">tbody</span> <span class="attr">style</span><span class="kwrd">="display: none"</span><span class="kwrd">&gt;</span>
+            <span class="kwrd">&lt;</span><span class="html">tr</span> <span class="attr">id</span><span class="kwrd">="MyGridRowTemplate"</span><span class="kwrd">&gt;</span>
+                <span class="kwrd">&lt;</span><span class="html">td</span> <span class="attr">class</span><span class="kwrd">="CellName"</span><span class="kwrd">&gt;&lt;/</span><span class="html">td</span><span class="kwrd">&gt;</span>
+                <span class="kwrd">&lt;</span><span class="html">td</span> <span class="attr">class</span><span class="kwrd">="CellAge"</span><span class="kwrd">&gt;&lt;/</span><span class="html">td</span><span class="kwrd">&gt;</span>
+                <span class="kwrd">&lt;</span><span class="html">td</span> <span class="attr">class</span><span class="kwrd">="CellPhoneNumber"</span><span class="kwrd">&gt;&lt;/</span><span class="html">td</span><span class="kwrd">&gt;</span>
+                <span class="kwrd">&lt;</span><span class="html">td</span> <span class="attr">class</span><span class="kwrd">="CellDescription"</span><span class="kwrd">&gt;&lt;/</span><span class="html">td</span><span class="kwrd">&gt;</span>
+           <span class="kwrd">&lt;/</span><span class="html">tr</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;/</span><span class="html">tbody</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">table</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">body</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">html</span><span class="kwrd">&gt;</span>
+</pre></pre></div></div><p>This html file contains a TABLE element, for the grid, with some headers and a row template. We can clone this row to create new rows in the grid. You can also notice the $(Load) code which is in fact the jQuery ready event, this means that when the DOM is ready the Load() function will be invoked.</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">GridDemo.cs</a><div class="TabContent"><pre><pre class="csharpcode">[JsType(JsMode.Global, Filename = <span class="str">"GridDemo.js"</span>)]
+<span class="kwrd">public</span> <span class="kwrd">class</span> GridDemoClient : jQueryContextBase
+{
+    <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">void</span> Load()
+    {
+        var list = <span class="kwrd">new</span> JsArray&lt;Contact&gt;();
+
+        <span class="kwrd">for</span> (var i = 0; i &lt; 30; i++)
+        {
+            var c = <span class="kwrd">new</span> Contact { Name = <span class="str">"MyContact"</span> + i, Age = i, PhoneNumber = <span class="str">"44557799"</span> + i, Description=<span class="str">"This is a contact "</span>+i };
+            list.push(c);
+        }
+        var grid = <span class="kwrd">new</span> Grid { Element = document.getElementById(<span class="str">"MyGrid"</span>) };
+        grid.Render();
+        <span class="kwrd">foreach</span> (var c <span class="kwrd">in</span> list)
+        {
+            var row = <span class="kwrd">new</span> GridRow { Element = grid.CreateRow(document.getElementById(<span class="str">"MyGridRowTemplate"</span>)), Data = c };
+            var tr = J(row.Element);
+            tr.find(<span class="str">".CellName"</span>).text(c.Name);
+            tr.find(<span class="str">".CellPhoneNumber"</span>).text(c.PhoneNumber);
+            tr.find(<span class="str">".CellAge"</span>).text(c.Age.ToString());
+            tr.find(<span class="str">".CellDescription"</span>).text(c.Description);
+            grid.AddRow(row);
+
+        }
+    }
+}
+</pre></pre></div></div><p>In this code, we're generating 30 sample contacts, then we create GridRow objects for them, we also create TR elements cloned from our template and bind the data from the contact instance to each row.</p><p></p><h2> Implementing Sorting </h2><p>With a solid grid API, it's easy to implement a feature like sorting, all we want to do is to clear the rows in the grid, sort them, and render them back to the grid.</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">GridDemo.cs</a><div class="TabContent"><pre><pre class="csharpcode"><span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">void</span> SortByName()
+{
+    var rows = Grid.Rows.OrderBy(t =&gt; t.Data.As&lt;Contact&gt;().Name);
+    Grid.DeleteAllRows();
+    <span class="kwrd">foreach</span> (var row <span class="kwrd">in</span> rows)
+        Grid.AddRow(row);
+}
+</pre></pre></div></div><p>OrderBy method is a custom extension method implemented in a small utility class:</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">JsArrayExtensions.cs</a><div class="TabContent"><pre><pre class="csharpcode">[JsType(JsMode.Prototype, Filename = <span class="str">"GridDemo.js"</span>)]
+<span class="kwrd">static</span> <span class="kwrd">class</span> JsArrayExtensions
+{
+    <span class="kwrd">public</span> <span class="kwrd">static</span> JsArray&lt;T&gt; OrderBy&lt;T&gt;(<span class="kwrd">this</span> JsArray&lt;T&gt; array, JsFunc&lt;T, <span class="kwrd">object</span>&gt; selector, <span class="kwrd">bool</span> desc)
+    {
+        var array2 = array.slice(0);
+        <span class="kwrd">if</span> (!desc)
+            array2.sort((x, y) =&gt; Compare(selector(x), selector(y)));
+        <span class="kwrd">else</span>
+            array2.sort((x, y) =&gt; CompareDesc(selector(x), selector(y)));
+        <span class="kwrd">return</span> array2;
+    }
+    <span class="kwrd">static</span> JsNumber Compare(<span class="kwrd">object</span> x, <span class="kwrd">object</span> y)
+    {
+        var xx = x.As&lt;<span class="kwrd">int</span>&gt;();
+        var yy = y.As&lt;<span class="kwrd">int</span>&gt;();
+        <span class="kwrd">if</span> (xx &gt; yy)
+            <span class="kwrd">return</span> 1;
+        <span class="kwrd">if</span> (xx &lt; yy)
+            <span class="kwrd">return</span> -1;
+        <span class="kwrd">return</span> 0;
+    }
+}
+</pre></pre></div></div><p>This is a simplified LINQ sorting implementation on JavaScript arrays, it is implemented using extension methods, to make code usage easier and more readable. It is still converted to plain JavaScript by SharpKit.</p><p></p><p>The next step is to support sorting by any property and remember the last sorting we've done, to toggle between Ascending and Descending sorting. We should also change the look of the currently sorted column, so the user will understand that the grid is sorted.</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">Grid.cs</a><div class="TabContent"><pre><pre class="csharpcode"><span class="kwrd">static</span> Grid Grid;
+<span class="kwrd">static</span> HtmlTableCell LastSortHeader;
+<span class="kwrd">static</span> JsString LastSort;
+<span class="kwrd">static</span> <span class="kwrd">bool</span> IsLastSortDescending;
+<span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">void</span> SortBy(HtmlTableCell header, JsString pe)
+{
+    J(LastSortHeader).removeClass(<span class="str">"Sorted"</span>).removeClass(<span class="str">"Descending"</span>);
+    IsLastSortDescending = LastSort == pe &amp;&amp; !IsLastSortDescending;
+    LastSort = pe;
+    LastSortHeader = header;
+    J(LastSortHeader).addClass(<span class="str">"Sorted"</span>);
+    J(LastSortHeader).toggleClass(<span class="str">"Descending"</span>, IsLastSortDescending);
+
+    var rows = Grid.Rows.OrderBy(t =&gt; t.Data.As&lt;JsObject&gt;()[pe], IsLastSortDescending);
+    Grid.DeleteAllRows();
+    <span class="kwrd">foreach</span> (var row <span class="kwrd">in</span> rows)
+        Grid.AddRow(row);
+}
+</pre></pre></div></div><p>Now all that's missing is to call the SortBy method when clicking the grid headers:</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">GridDemo.htm</a><div class="TabContent"><pre><pre class="csharpcode"><span class="kwrd">&lt;</span><span class="html">table</span> <span class="attr">id</span><span class="kwrd">="MyGrid"</span> <span class="attr">class</span><span class="kwrd">="Grid"</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">thead</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">tr</span><span class="kwrd">&gt;</span>
+            <span class="kwrd">&lt;</span><span class="html">th</span> <span class="attr">onclick</span><span class="kwrd">="SortBy(this, 'Name');"</span><span class="kwrd">&gt;</span>Name<span class="kwrd">&lt;/</span><span class="html">th</span><span class="kwrd">&gt;</span>
+            <span class="kwrd">&lt;</span><span class="html">th</span> <span class="attr">onclick</span><span class="kwrd">="SortBy(this, 'Age');"</span><span class="kwrd">&gt;</span>Age<span class="kwrd">&lt;/</span><span class="html">th</span><span class="kwrd">&gt;</span>
+            <span class="kwrd">&lt;</span><span class="html">th</span> <span class="attr">onclick</span><span class="kwrd">="SortBy(this, 'PhoneNumber');"</span><span class="kwrd">&gt;</span>Phone Number<span class="kwrd">&lt;/</span><span class="html">th</span><span class="kwrd">&gt;</span>
+            <span class="kwrd">&lt;</span><span class="html">th</span> <span class="attr">onclick</span><span class="kwrd">="SortBy(this, 'Description');"</span><span class="kwrd">&gt;</span>Description<span class="kwrd">&lt;/</span><span class="html">th</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;/</span><span class="html">tr</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">thead</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">tbody</span> <span class="attr">style</span><span class="kwrd">="display: none"</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">tr</span> <span class="attr">id</span><span class="kwrd">="MyGridRowTemplate"</span><span class="kwrd">&gt;</span>
+            <span class="kwrd">&lt;</span><span class="html">td</span> <span class="attr">class</span><span class="kwrd">="CellName"</span><span class="kwrd">&gt;&lt;/</span><span class="html">td</span><span class="kwrd">&gt;</span>
+            <span class="kwrd">&lt;</span><span class="html">td</span> <span class="attr">class</span><span class="kwrd">="CellAge"</span><span class="kwrd">&gt;&lt;/</span><span class="html">td</span><span class="kwrd">&gt;</span>
+            <span class="kwrd">&lt;</span><span class="html">td</span> <span class="attr">class</span><span class="kwrd">="CellPhoneNumber"</span><span class="kwrd">&gt;&lt;/</span><span class="html">td</span><span class="kwrd">&gt;</span>
+            <span class="kwrd">&lt;</span><span class="html">td</span> <span class="attr">class</span><span class="kwrd">="CellDescription"</span><span class="kwrd">&gt;&lt;/</span><span class="html">td</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;/</span><span class="html">tr</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">tbody</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">table</span><span class="kwrd">&gt;</span>
+</pre></pre></div></div><p>That's it, simple, straightforward, fast and highly customizable.</p><p></p><h2> Optimizing the Grid </h2><p>Legacy browsers can slow, sometimes a simple jQuery usage can result in hard performance penalties in browsers like IE7, sometimes you have to get your hands dirty and implement optimized DOM APIs of your own. SharpKit allows me to do this easily by implementing extension methods. It makes the code easy to read and easy to maintain.</p><div class="TabControl"><a href="javascript:void(0)" class="Selected">GridExtensions.cs</a><div class="TabContent"><pre><pre class="csharpcode">[JsType(JsMode.Prototype, Filename = <span class="str">"Grid.js"</span>)]
+<span class="kwrd">static</span> <span class="kwrd">class</span> Extensions
+{
+    <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">void</span> AppendChildFast(<span class="kwrd">this</span> HtmlElement el, HtmlElement newElement, HtmlElement lastChild)
+    {
+        <span class="kwrd">if</span> (lastChild != <span class="kwrd">null</span> &amp;&amp; SupportsInsertAdjacentElement)
+            lastChild.insertAdjacentElement(<span class="str">"afterEnd"</span>, newElement);
+        <span class="kwrd">else</span>
+            el.appendChild(newElement);
+    }
+}
+</pre></pre></div></div><p>Now, I can use el.AppendChildFast(), as if it was a method on HtmlElement, when in fact, it's a static extension method. About this method, in old browsers like IE7, appendChild() can be very slow, since the browser iterates over all the siblings until it reaches the end in order to add the element. This method gets a pointer to the lastChild and uses insertAdjacentElement method to add the element without this overhead.</p><p></p><h2> Points of Interest </h2><p>In conclusion, writing JavaScript code can sometimes be complicated, using SharpKit allows us to focus on writing the code, and perform refactorings and cleanups afterwards. It's also possible to add xml documentation and generate a help file to allow other developers to easily integrate your component.</p><h1> Extending SharpKit </h1><p>SharpKit is an extensible compiler, with plugin support, this means that it is possible to implement a plugin and add new features.</p><p>Compiler plugins can add and customize C# and JavaScript code, or even support conversion to a different target language.</p><p></p><h2> Writing your first plugin </h2><p>In order to write a plugin, follow these steps:</p><li>Create a new .NET 4 library project (dll)</li><li>Add a refernece to skc5.exe (found in C:\Windows\Microsoft.NET\Framework\v4.0.30319\SharpKit\5\)</li><li>Add the following code:</li><p></p><div class="TabControl"><a href="javascript:void(0)" class="Selected">MyPlugin.cs</a><div class="TabContent"><pre><pre class="csharpcode"><span class="kwrd">using</span> System;
+<span class="kwrd">using</span> System.Collections.Generic;
+<span class="kwrd">using</span> System.Linq;
+<span class="kwrd">using</span> System.Text;
+<span class="kwrd">using</span> SharpKit.Compiler;
+
+<span class="kwrd">namespace</span> MySharpKitPlugin
+{
+    <span class="kwrd">public</span> <span class="kwrd">class</span> MyPlugin : ICompilerPlugin
+    {
+        <span class="kwrd">public</span> ICompiler Compiler { get; set; }
+        <span class="kwrd">public</span> <span class="kwrd">void</span> Init(ICompiler compiler)
+        {
+            Compiler = compiler;
+            Compiler.AfterParseCs += <span class="kwrd">new</span> Action(Compiler_AfterParseCs);
+            Compiler.BeforeSaveJsFiles += <span class="kwrd">new</span> Action(Compiler_BeforeSaveJsFiles);
+        }
+
+        <span class="kwrd">void</span> Compiler_AfterParseCs()
+        {
+            Console.WriteLine(<span class="str">"MyPlugin: AfterParseCs: Hello"</span>);
+        }
+
+        <span class="kwrd">void</span> Compiler_BeforeSaveJsFiles()
+        {
+            Console.WriteLine(<span class="str">"MyPlugin: BeforeSaveJsFiles: Hello again"</span>);
+        }
+
+
+    }
+}
+</pre></pre></div></div><li>Compile your plugin</li><li>Copy the output dll file into the skc5.exe directory (create a post-build event for easier updates)</li><p></p><p>Create a test project for your plugin:</p><li>Create a new SharpKit 5 Web Application Project named MySharpKitPluginTest</li><li>Install the plugin by editing the .csproj file, and add an ItemGroup element with your plugin fully qualified type name:</li><div class="TabControl"><a href="javascript:void(0)" class="Selected">MySharpKitPluginTest.csproj</a><div class="TabContent"><pre><pre class="csharpcode">  <span class="kwrd">&lt;</span><span class="html">ItemGroup</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">SkcPlugin</span> <span class="attr">Include</span><span class="kwrd">="MySharpKitPlugin.MyPlugin, MySharpKitPlugin"</span><span class="kwrd">&gt;&lt;</span><span class="html">InProject</span><span class="kwrd">&gt;</span>false<span class="kwrd">&lt;/</span><span class="html">InProject</span><span class="kwrd">&gt;&lt;/</span><span class="html">SkcPlugin</span><span class="kwrd">&gt;</span>
+  <span class="kwrd">&lt;/</span><span class="html">ItemGroup</span><span class="kwrd">&gt;</span>
+</pre></pre></div></div><li>Reload your test project </li><li>Build your test project</li><li>Look at the build output and verify that your plugin was loaded, and that the "Hello" output is written.</li><p></p><p>You can use the 'Compiler' object to read and modify the C# and JavaScript in-memory model. In order to use the C# model, you'll need to add a reference to NRefactory assemblies as well.</p>
+    
+    <p style="text-align:right;padding-top:20px;font-size:small"><a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/Wiki/">Table of Contents</a></p>
+    
+    </div>
+
+        </div>
+    </div>
+    <div class="Footer">
+        <div class="Panel">
+            <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/Terms.aspx">Terms of Use</a>|
+            <a href="https://web.archive.org/web/20160821175134/http://sharpkit.net:80/LicenseAgreement.aspx">License Agreement</a>|
+            
+        </div>
+    </div>
+    <div class="Footer2">
+        <div class="Panel">
+            © Copyright 2005-2015 SharpKit
+        </div>
+        </div>
+    
+
+<!--
+     FILE ARCHIVED ON 17:51:34 Aug 21, 2016 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 22:31:34 Jun 15, 2018.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  LoadShardBlock: 345.812 (3)
+  esindex: 0.006
+  captures_list: 359.735
+  CDXLines.iter: 9.105 (3)
+  PetaboxLoader3.datanode: 73.952 (4)
+  exclusion.robots: 0.332
+  exclusion.robots.policy: 0.322
+  RedisCDXSource: 1.718
+  PetaboxLoader3.resolve: 324.28 (2)
+  load_resource: 141.735
+--></body></html>
